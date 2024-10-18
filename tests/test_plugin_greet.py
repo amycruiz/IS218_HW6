@@ -1,3 +1,4 @@
+'''Testing plugin commands'''
 import pytest
 from app import App
 
