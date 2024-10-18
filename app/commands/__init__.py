@@ -17,3 +17,6 @@ class CommandHandler:
             self.commands[command_name].execute()
         except KeyError:
             print(f"No such command: {command_name}")
+    
+    def get_avaliable_commands(self):
+        return list(self.commands.keys())
