@@ -55,17 +55,23 @@ class App:
     def start(self):
         self.load_plugins()
         logging.info("Application started. Type 'exit' to exit.")
+        print("Avaliable commands:", self.command_handler.get_avaliable_commands())
         try:
             while True:
-                cmd_input = input(">>> ").strip()
-                if cmd_input.lower() == 'exit':
+                user_input = input(">>> ").strip()
+                if user_input.lower() == 'exit':
                     logging.info("Application exit.")
                     sys.exit(0)
+                parts = user_input.split()
+                command_name = parts [0]
+                args = parts[1:]
+
                 try:
-                    self.command_handler.execute_command(cmd_input)
+                    self.command_handler.execute_command(command_name, *args)
                 except KeyError:
-                    logging.error(f"Unknown command: {cmd_input}")
+                    logging.error(f"Unknown command: {user_input}")
                     sys.exit(1)
+                    
         except KeyboardInterrupt:
             logging.info("Application interrupted and exiting gracefully.")
             sys.exit(0)
