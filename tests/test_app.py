@@ -16,7 +16,7 @@ def test_app_start_exit_command(capfd, monkeypatch):
     app = App()
     with pytest.raises(SystemExit) as e:
         app.start()
-    assert e.type == SystemExit
+    assert e.value.code == 0
 
 def test_app_start_unknown_command(capfd, monkeypatch):
     '''Tests how the read, execute, print, and loop
@@ -27,4 +27,4 @@ def test_app_start_unknown_command(capfd, monkeypatch):
     with pytest.raises(SystemExit):
         app.start()
     captured = capfd.readouterr()
-    assert "No such command: unknown_command" in captured.out
+    assert "Command 'unknown_command' not found." in captured.out
