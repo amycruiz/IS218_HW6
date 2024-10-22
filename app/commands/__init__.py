@@ -22,6 +22,6 @@ class CommandHandler:
             logging.error(f"Command '{command_name}' not found.")
             print(f"Command '{command_name}' not found.")
     
-    def get_avaliable_commands(self):
-        logging.info("Retrieving list of avaliable commands")
+    def get_availiable_commands(self):
+        logging.info("Retrieving list of availiable commands")
         return list(self.commands.keys())

@@ -55,7 +55,7 @@ class App:
     def start(self):
         self.load_plugins()
         logging.info("Application started. Type 'exit' to exit.")
-        print("Avaliable commands:", self.command_handler.get_avaliable_commands())
+        print("Availiable commands:", self.command_handler.get_availiable_commands())
         try:
             while True:
                 user_input = input(">>> ").strip()

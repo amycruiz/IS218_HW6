@@ -1,3 +1,4 @@
+'''
 import logging
 import os
 import logging.config
@@ -10,3 +11,4 @@ else:
 
 logging.info("Logging configured.")
 logging.warning("this is a test")
+'''
